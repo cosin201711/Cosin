@@ -62,7 +62,10 @@ ActiveRecord::Schema.define(version: 20171219082941) do
     t.integer "item_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
+=======
     t.boolean "active"
+>>>>>>> origin/master
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -88,6 +91,7 @@ ActiveRecord::Schema.define(version: 20171219082941) do
     t.integer "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", limit: 1, default: 0, null: false
   end
 
   create_table "tracks", force: :cascade do |t|
@@ -118,7 +122,7 @@ ActiveRecord::Schema.define(version: 20171219082941) do
     t.string "post_code"
     t.string "address"
     t.string "phone"
-    t.integer "leave"
+    t.boolean "leave"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
