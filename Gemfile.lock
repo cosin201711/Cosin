@@ -287,9 +287,6 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.7)
   rails (~> 5.1.4)
-  pry
-  puma (~> 3.7)
-  rails (~> 5.1.4)
   rails-i18n
   refile!
   rspec-rails

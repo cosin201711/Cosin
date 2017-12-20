@@ -10,12 +10,13 @@ Adminster.create(:email => 'sample@com', :password => 'aaaaaaaa')
 
 
 5.times do |no|
-     Item.create(
+     item = Item.new(
          :adminster_id => 1,
          :album_name => "テスト #{no}",
          :artist_name => "アーティスト #{no}",
-         :price => "1000",
-         :cd_image_id => open "/db/migrate/sample.jpg",
+         :price => "1000"
          )
+     item.cd_image = File.open("db/sample.jpg")
+     item.save
  end
 
