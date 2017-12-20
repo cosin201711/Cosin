@@ -20,6 +20,7 @@ class Item < ApplicationRecord
 	accepts_nested_attributes_for :discs, allow_destroy: true
 
 	validates :album_name,
+			  :cd_image,
 			  :artist_name,   
 			  :label_name, 
 			  :genre, 
@@ -34,9 +35,5 @@ class Item < ApplicationRecord
 						    message: '全角カナで入力して下さい' }
 	validates :price, 
 					numericality: { greater_than_or_equal_to: 1, only_integer: true} 
-
-	validates :cd_image, 
-					format: { with: %r{\.(gif\jpg\png)\Z}i,
-					message: 'gif,png,jpgファイルをアップロートしてください'}
 
 end

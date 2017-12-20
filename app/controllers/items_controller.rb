@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
 
 	def create
 		@item = Item.new(item_params)
-		redirect_to items_path
+		# redirect_to items_path
 		@item.adminster_id = current_adminster.id
 		if @item.save
 			redirect_to items_path
