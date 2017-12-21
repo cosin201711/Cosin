@@ -16772,3 +16772,56 @@ Processing by ItemsController#show as HTML
 Completed 200 OK in 270ms (Views: 232.3ms | ActiveRecord: 8.1ms)
 
 
+Started GET "/items/2/edit" for 10.0.2.2 at 2017-12-21 10:11:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering items/edit.html.erb within layouts/application
+  [1m[36mDisc Load (1.7ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."item_id" = ? ORDER BY "discs"."disc_number" ASC[0m  [["item_id", 2]]
+  [1m[36mTrack Load (1.9ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ? ORDER BY "tracks"."track_number" ASC[0m  [["disc_id", 9]]
+  Rendered items/_track_fields.html.erb (1.5ms)
+  Rendered items/_track_fields.html.erb (0.8ms)
+  Rendered items/_track_fields.html.erb (0.8ms)
+  Rendered items/_track_fields.html.erb (0.8ms)
+  Rendered items/_disc_fields.html.erb (125.0ms)
+  [1m[36mTrack Load (3.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ? ORDER BY "tracks"."track_number" ASC[0m  [["disc_id", 11]]
+  Rendered items/_track_fields.html.erb (0.8ms)
+  Rendered items/_track_fields.html.erb (2.1ms)
+  Rendered items/_disc_fields.html.erb (59.0ms)
+  Rendered items/_track_fields.html.erb (0.8ms)
+  Rendered items/_disc_fields.html.erb (26.0ms)
+  [1m[36mAdminster Load (3.1ms)[0m  [1m[34mSELECT  "adminsters".* FROM "adminsters" WHERE "adminsters"."id" = ? ORDER BY "adminsters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/_form.html.erb (294.1ms)
+  Rendered items/edit.html.erb within layouts/application (478.4ms)
+Completed 200 OK in 705ms (Views: 667.7ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/items" for 10.0.2.2 at 2017-12-21 10:11:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (1.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (5.3ms)
+  [1m[36mAdminster Load (1.9ms)[0m  [1m[34mSELECT  "adminsters".* FROM "adminsters" WHERE "adminsters"."id" = ? ORDER BY "adminsters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 230ms (Views: 203.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/items/1" for 10.0.2.2 at 2017-12-21 10:13:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (1.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mDisc Load (1.8ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."item_id" = ? ORDER BY "discs"."disc_number" ASC[0m  [["item_id", 1]]
+  [1m[36mTrack Load (1.7ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ? ORDER BY "tracks"."track_number" ASC[0m  [["disc_id", 1]]
+  [1m[36mTrack Load (2.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ? ORDER BY "tracks"."track_number" ASC[0m  [["disc_id", 3]]
+  Rendered items/show.html.erb within layouts/application (15.1ms)
+  [1m[36mAdminster Load (1.7ms)[0m  [1m[34mSELECT  "adminsters".* FROM "adminsters" WHERE "adminsters"."id" = ? ORDER BY "adminsters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 254ms (Views: 224.2ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/attachments/00ceeefb07576f46ee14ffa4fca8e57bbfb51b70/store/1b8b5432b475bb2c693f10d49ec5f40c3e9b370083ef847b6f77f7f6018f/cd_image" for 10.0.2.2 at 2017-12-21 10:13:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2017-12-21 10:13:34 +0000] GET "/00ceeefb07576f46ee14ffa4fca8e57bbfb51b70/store/1b8b5432b475bb2c693f10d49ec5f40c3e9b370083ef847b6f77f7f6018f/cd_image" 200 6.3ms
+
