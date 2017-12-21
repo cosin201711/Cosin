@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+	# before_action :authenticate_user!, except: [:top, :show]
 	def new
 		@item = Item.new
 		1.times do
@@ -9,7 +10,6 @@ class ItemsController < ApplicationController
 
 	def create
 		@item = Item.new(item_params)
-		redirect_to items_path
 		@item.adminster_id = current_adminster.id
 		if @item.save
 			redirect_to items_path
@@ -28,8 +28,7 @@ class ItemsController < ApplicationController
 
 	def update
 		@item = Item.find(params[:id])
-		@item.update(item_params)
-		redirect_to items_path
+		@item.adminster_id = current_adminster.id
 		if @item.update(item_params)
 			redirect_to item_path
 		else
