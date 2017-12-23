@@ -7,13 +7,20 @@ class AdminstersController < ApplicationController
 	def manage_users
 		@user = User.find(params[:id])
 		@users = User.all
+		@users = @users.get_all params[:search]
 	end
 
 	def show
 		@users = User.all
+		if params[:search].present?
+			@users = @users.get_all params[:search]
+		end
+		# @user = User.find(params[:id])
 	end
 
 	def show_user
+		@user = User.find(params[:id])
+		@orders = @user.orders.page(params[:page]).reverse_order
 	end
 
 	def edit_user_details
@@ -23,7 +30,7 @@ class AdminstersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		if @user.update(user_params)
-        	redirect_to adminsters_path(@user.id), notice: "更新しました。"
+        	redirect_to adminsters_manage_users_path, notice: "更新しました。"
         else
         	render 'edit_user_details'
         end
@@ -32,8 +39,8 @@ class AdminstersController < ApplicationController
 
 	def destroy
 		user = User.find(params[:id])
-    	user.destroy
-    	redirect_to adminster_path, notice: "更新しました。"
+        user.update_attribute(:leave, false)
+        redirect_to adminsters_manage_users_path
 	end
 
 	def user_params
