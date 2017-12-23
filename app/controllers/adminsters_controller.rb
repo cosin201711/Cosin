@@ -5,16 +5,15 @@ class AdminstersController < ApplicationController
 	end
 
 	def manage_users
+		@user = User.find(params[:id])
 		@users = User.all
 	end
 
 	def show
 		@users = User.all
-		# @user = User.find(params[:id])
 	end
 
 	def show_user
-		
 	end
 
 	def edit_user_details
@@ -32,7 +31,9 @@ class AdminstersController < ApplicationController
 
 
 	def destroy
-		
+		user = User.find(params[:id])
+    	user.destroy
+    	redirect_to adminster_path, notice: "更新しました。"
 	end
 
 	def user_params
