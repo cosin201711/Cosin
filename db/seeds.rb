@@ -15,7 +15,7 @@
 #          :album_name => "テスト #{no}",
 #          :artist_name => "アーティスト #{no}",
 #          :price => "1000",
-#          :cd_image_id => open "/db/migrate/sample.jpg",
+#          # :cd_image_id => open "/db/migrate/sample.jpg",
 #          )
 #  end
 
