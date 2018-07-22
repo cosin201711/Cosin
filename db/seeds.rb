@@ -15,7 +15,23 @@
 #          :album_name => "テスト #{no}",
 #          :artist_name => "アーティスト #{no}",
 #          :price => "1000",
-#          :cd_image_id => open "/db/migrate/sample.jpg",
+#          # :cd_image_id => open "/db/migrate/sample.jpg",
 #          )
+#  end
+
+
+# 5.times do |no|
+#      user = User.new(
+#      	 :password => "aaaaaaaa",
+#          :email => "samole@com#{no} ",
+#          :first_name => "ファネーム #{no}",
+#          :last_name => "ラストネーム #{no}",
+#          :first_name_kana => "ファかな　#{no}",
+#          :last_name_kana => "ラかな#{no}",
+#          :post_code => "9999999#{no}",
+#          :address => "住所　#{no}",
+#          )
+#      user.save!
+
 #  end
 
